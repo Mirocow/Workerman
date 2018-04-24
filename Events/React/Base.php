@@ -160,7 +160,7 @@ class Base implements \React\EventLoop\LoopInterface
      * @param resource $stream
      * @param callable $listener
      */
-    public function addReadStream($stream, $listener)
+    public function addReadStream($stream, callable $listener)
     {
         return $this->_eventLoop->addReadStream($stream, $listener);
     }
@@ -169,7 +169,7 @@ class Base implements \React\EventLoop\LoopInterface
      * @param resource $stream
      * @param callable $listener
      */
-    public function addWriteStream($stream, $listener)
+    public function addWriteStream($stream, callable $listener)
     {
         return $this->_eventLoop->addWriteStream($stream, $listener);
     }
@@ -195,7 +195,7 @@ class Base implements \React\EventLoop\LoopInterface
      * @param callable $callback
      * @return \React\EventLoop\Timer\Timer|TimerInterface
      */
-    public function addTimer($interval, $callback)
+    public function addTimer($interval, callable $callback)
     {
         return $this->_eventLoop->addTimer($interval, $callback);
     }
@@ -205,7 +205,7 @@ class Base implements \React\EventLoop\LoopInterface
      * @param callable $callback
      * @return \React\EventLoop\Timer\Timer|TimerInterface
      */
-    public function addPeriodicTimer($interval, $callback)
+    public function addPeriodicTimer($interval, callable $callback)
     {
         return $this->_eventLoop->addPeriodicTimer($interval, $callback);
     }
@@ -221,7 +221,7 @@ class Base implements \React\EventLoop\LoopInterface
     /**
      * @param callable $listener
      */
-    public function futureTick($listener)
+    public function futureTick(callable $listener)
     {
         return $this->_eventLoop->futureTick($listener);
     }
